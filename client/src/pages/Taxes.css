@@ -151,7 +151,7 @@ body {
   padding: 15px;
 }
 
-//* Form buttons */
+/* Form buttons */
 .tax-form-container button {
   padding: 8px 16px;
   font-size: 0.9rem;
@@ -164,12 +164,13 @@ body {
   transition: background-color 0.3s ease;
 }
 
+
 .tax-form-container button:hover {
   background-color: #4A87B0;
 }
 
 
-/* 👇 Added left margin to form */
+
 .tax-form {
   display: flex;
   flex-direction: column;
@@ -192,7 +193,7 @@ body {
   font-weight: 600;
 }
 
-/* 🆕 Tax input card styles */
+
 .tax-card {
   background-color: #ffffff;
   margin-bottom: 3px;
@@ -211,7 +212,7 @@ body {
   color: #333;
 }
 
-/* 🆕 Input styling */
+
 .auth-input {
   padding: 6px 10px; /* Reduced height */
   border: 1px solid #ccc;
