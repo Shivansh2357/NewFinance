@@ -1,0 +1,526 @@
+/* === Global Styles === */
+/* === Global Styles === */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, rgb(248, 250, 253), hsl(0, 0%, 100%));
+  font-family: 'Poppins', sans-serif;
+  color: #333333; /* Darker text color */
+}
+
+/* === Shared Auth Styles === */
+.auth-container {
+  
+width:500px;
+  color: #333333; /* Darker text color */
+  background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+   /* Blurring the content behind the container */
+  border-radius: 8px; /* Optional: Rounded corners */
+  z-index: 10; /* Ensure the container is on top */
+}
+
+.auth-card {
+ margin-top:150px;
+ margin-left:700px;
+  backdrop-filter: blur(14px);
+  padding: 50px 40px; /* Increased padding for bigger form */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px; /* Increased max-width for larger form */
+  text-align: center;
+  color: #333333; /* Darker text color */
+}
+
+.auth-title {
+  font-size: 2.2rem; /* Increased font size */
+  font-weight: 700;
+  color: #333333; /* Darker text color */
+  margin-bottom: 35px; /* Increased margin */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.auth-form,
+.auth-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased space between form elements */
+  color: #333333; /* Darker text color */
+}
+
+.auth-group label {
+  font-size: 16px; /* Slightly larger label font */
+  margin-bottom: 8px; /* Increased margin */
+  text-align: left;
+}
+
+.auth-group input,
+.auth-input {
+  width: 100%;
+  padding: 16px 18px; /* Increased padding for larger input fields */
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #333333; /* Darker text color */
+  font-size: 1rem; /* Larger font size */
+}
+
+.auth-group input::placeholder {
+  color: #ADD8E6; /* Light Blue color */
+}
+.auth-input::placeholder {
+  color: #ADD8E6; /* Light Blue color */
+  
+}
+
+
+.auth-button:hover {
+  background-color:rgb(60, 65, 70);
+  transform: translateY(-2px);
+}
+
+.auth-footer {
+  margin-top: 30px; /* Increased margin */
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem; /* Larger font size */
+}
+
+.auth-footer a {
+  color: #5B99C2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+  color: #4a7aa3;
+}
+
+
+/* === Sidebar Styles === */
+.sidebar {
+  width: 20%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar nav ul li {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav ul li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a i,
+.sidebar nav ul li a svg {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+/* === Dashboard Layout === */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard {
+  flex: 1;
+  background-color: white;
+  color: black;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* === Investment Section === */
+.investment-container {
+  
+ padding: 40px 20px;
+  margin:3%;
+  border-radius: 12px;
+  width: 1500px;
+   background-color: #f7f9fc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  
+}
+
+.investment-card {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  padding: 10px;
+  margin-top:2%;
+  margin-left:2%;
+  
+  transition: transform 0.3s ease;
+}
+
+.investment-card:hover {
+  transform: translateY(-5px);
+}
+
+.investment-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.investment-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.investment-ca,rd p {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+
+.add-investment-btn:hover {
+  background-color: #4a7aa3;
+  transform: translateY(-2px);
+}
+* === Transaction Page Styles === */
+.transaction-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Transaction page header */
+.transaction-page h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search bar */
+.transaction-page .search-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.transaction-page .search-bar input {
+  padding: 14px;
+  width: 60%;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+}
+
+
+
+
+
+/* Transaction list */
+.transaction-page .transaction-list {
+  width: 100%;
+  max-width: 1600px;
+}
+
+.transaction-page .transaction-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-page .transaction-list ul li {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-page .transaction-list ul li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.transaction-page .transaction-list .transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transaction-page .transaction-list .transaction-details h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-page .transaction-list .transaction-actions button {
+  background-color: #5b99c2;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transaction-page .transaction-list .transaction-actions button:hover {
+  background-color: #4a7aa3;
+}
+
+.transaction-page .transaction-list .transaction-actions .delete-btn {
+  background-color: #e74c3c;
+}
+
+.transaction-page .transaction-list .transaction-actions .delete-btn:hover {
+  background-color: #c0392b;
+}
+.tax-container{
+  width:1500px;
+  background-color:;
+  margin-left:8%;
+  margin-top:2%;
+  background-color: #ffffff;
+  color:black;
+  padding:100px;
+  justify-content:center;
+
+}
+/* SavingsList styles */
+.savings-container {
+  padding: 2rem;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  width: 1450px;
+  
+  display:flex;
+  height:300px;
+}
+
+.savings-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.savings-list { 
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  
+  gap: 1rem;
+}
+
+.savings-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  width:300px;
+
+}
+
+.savings-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.savings-detail {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.savings-description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.savings-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.savings-delete-button {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.savings-delete-button:hover {
+  background-color: #dc2626;
+}
+
+.savings-empty {
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+}
+/* AddSavingsForm styles */
+.savings-form-container {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 2%;
+  margin-left:30%;
+}
+
+.savings-form-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.savings-form-group {
+  margin-bottom: 1rem;
+}
+
+.savings-form-label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.savings-form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border 0.2s ease-in-out;
+}
+
+.savings-form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.savings-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.savings-submit-btn {
+ background-color: #5b99c2;
+  color: #fff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.savings-submit-btn:hover {
+  background-color: #467ba1;
+}
+
+.savings-cancel-btn {
+  background-color: #9ca3af;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.savings-cancel-btn:hover {
+  background-color: #6b7280;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transaction-page .search-bar input {
+    width: 80%;
+  }
+
+  
+  .transaction-page .transaction-list ul li {
+    flex-direction: column;
+  }
+
+  .transaction-page .transaction-list .transaction-actions {
+    margin-top: 10px;
+  }
+}
+
+.investment-title {
+   font-size: 32px;
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #2c3e50;
+  text-align: center;
+  width: 100%;       /* ensure full width */
+  margin-left: auto;
+  margin-right: auto; 
+  /* centers the block */
+  margin-top:5%;
+  display: block;    /* default for h1, just to be explicit */
+}

@@ -1,0 +1,110 @@
+/* Container for the loan list */
+.loan-container {
+ padding: 40px 20px;
+  margin:3%;
+  border-radius: 12px;
+  width: 1500px;
+  justify-content:center;
+   background-color: #f7f9fc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.loan-container-1{
+  
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  
+  width:600px;
+  
+  height:500px;
+  
+  margin-left:13%;
+}
+/* Header text */
+.loan-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  justify-content:center;
+}
+.loan-card{
+     
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width:500px;
+  padding:1%;
+  border-radius:0.5rem;
+  
+ gap:10px;
+  
+  transition: transform 0.3s ease;
+}
+
+/* Table styles */
+.loan-table {
+  width: 90%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+}
+
+.loan-table thead {
+  background-color: #e5e7eb; /* Tailwind's gray-200 */
+  text-align: left;
+}
+
+.loan-table th,
+.loan-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.loan-table td {
+  vertical-align: top;
+}
+
+.loan-table td.capitalize {
+  text-transform: capitalize;
+}
+
+/* Action buttons */
+.loan-btn-e {
+ padding: 11px 28px;
+  background-color: #5b99c2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loan-btn.edit {
+  padding: 38px 28px;
+  background-color: #5b99c2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loan-btn.edit:hover {
+  background-color: #2563eb; /* Tailwind's blue-600 */
+}
+
+.loan-btn{
+  padding: 14px 28px;
+  background-color: #5b99c2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loan-btn.delete:hover {
+  background-color: #dc2626; /* Tailwind's red-600 */
+}

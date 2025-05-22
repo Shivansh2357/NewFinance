@@ -1,0 +1,242 @@
+/* Global smaller font */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; /* smaller base font */
+  background-color: #F1F5F9;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.tax-page-container {
+  max-width: 900px; /* smaller width */
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 15px; /* reduced padding */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.tax-title {
+  font-size: 1.8rem; /* smaller title */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Error and Loading */
+.tax-error,
+.tax-loading {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Add New Tax Button */
+.add-tax-button {
+  display: block;
+  margin: 15px auto;
+  padding: 8px 18px; /* smaller padding */
+  background-color: #5B99C2;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-tax-button:hover {
+  background-color: #4A87B0;
+}
+
+/* Table container */
+.tax-table-container {
+  margin-top: 0px;
+  overflow-x: auto;
+}
+
+/* Table */
+.tax-table {
+  width: 90%; /* increased width for bigger inputs */
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.85rem; /* smaller text in table */
+}
+
+.tax-table thead {
+  background-color: #E2E8F0;
+}
+
+.tax-table th,
+.tax-table td {
+  padding: 8px 20px; /* increased padding for bigger cells */
+  border: 1px solid #E2E8F0;
+  min-width: 160px; /* wider cell container */
+}
+
+.tax-table th {
+  background-color: #EDF2F7;
+  font-weight: 600;
+  color: #4A5568;
+}
+
+.tax-table td {
+  background-color: #F7FAFC;
+  color: #2D3748;
+}
+
+/* Input fields inside table */
+.tax-table td input {
+  padding: 6px 10px; /* bigger padding for easier interaction */
+  font-size: 1rem; /* larger font for readability */
+  width: 90%; /* wider input */
+  max-width: 200px; /* increased max-width */
+  border-radius: 6px;
+  border: 1.5px solid #CBD5E0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tax-table td input:focus {
+  outline: none;
+  border-color: #5B99C2;
+  box-shadow: 0 0 5px #5B99C2;
+}
+
+/* Actions buttons */
+.tax-table-actions {
+  display: flex;
+  gap: 8px; /* smaller gaps */
+}
+
+.tax-table-actions button {
+  padding: 6px 12px; /* smaller buttons */
+  border-radius: 5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+}
+
+.tax-table-actions .edit-button {
+  background-color: #38A169;
+  color: white;
+}
+
+.tax-table-actions .edit-button:hover {
+  background-color: #2F855A;
+}
+
+.tax-table-actions .delete-button {
+  background-color: #E53E3E;
+  color: white;
+}
+
+.tax-table-actions .delete-button:hover {
+  background-color: #C53030;
+}
+
+/* No Records Found */
+.no-records {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #4A5568;
+  padding: 15px;
+}
+
+//* Form buttons */
+.tax-form-container button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background-color: #5B99C2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.tax-form-container button:hover {
+  background-color: #4A87B0;
+}
+
+
+/* 👇 Added left margin to form */
+.tax-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 15%;
+  
+}
+
+.tax-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+
+.tax-error {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 🆕 Tax input card styles */
+.tax-card {
+  background-color: #ffffff;
+  margin-bottom: 3px;
+  
+  display: flex;
+  border-radius: 6px;
+    border: 1px solid #ccc;
+  flex-direction: column;
+  width: 100%; /* Increased width */
+  height: 60px; /* Allows dynamic height based on content */
+}
+
+.tax-card label {
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* 🆕 Input styling */
+.auth-input {
+  padding: 6px 10px; /* Reduced height */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+ 
+  width: 80%;
+}
+
+
+
+
+
+/* Submit button */
+.add-transaction-button {
+  width: 65%;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+
+/* Optional override if not using Tailwind for everything */
+@media (min-width: 300px) {
+  .sidebar {
+    display: block;
+  }
+}

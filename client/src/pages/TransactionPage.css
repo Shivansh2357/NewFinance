@@ -1,0 +1,183 @@
+/* === Transaction Page Styles === */
+
+.transaction-page {
+  padding: 40px 20px;
+  margin:3%;
+  border-radius: 12px;
+  width: 1500px;
+   background-color: #f7f9fc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1e2a38;
+}
+
+/* === Add Button === */
+
+.add-button-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.add-transaction-button {
+  padding: 14px 28px;
+  background-color: #5b99c2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-transaction-button:hover {
+  background-color: #467ba1;
+  transform: translateY(-2px);
+}
+
+/* === Table Styles === */
+
+.transaction-table-container {
+  margin-top: 40px;
+
+  width:100%;
+  overflow-x: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.transaction-table th {
+  background-color: #5b99c2;
+  color: white;
+  font-weight: 600;
+}
+
+.transaction-table tr:last-child td {
+  border-bottom: none;
+}
+
+.no-transactions {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-size: 16px;
+}
+
+/* === Action Buttons === */
+
+.edit-button, .delete-button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.edit-button {
+  background-color: #f0ad4e;
+  margin-right: 8px;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+/* === Form Modal === */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* === Search Bar === */
+
+.transaction-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-search-input:focus {
+  border-color: #5b99c2;
+  box-shadow: 0 0 0 3px rgba(91, 153, 194, 0.2);
+}
+
+/* === Mobile Responsiveness === */
+
+@media (max-width: 768px) {
+  .transaction-page {
+    padding: 20px 10px;
+  }
+
+  .transaction-title {
+    font-size: 24px;
+  }
+
+  .add-transaction-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .transaction-table th,
+  .transaction-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 20px;
+  }
+}
