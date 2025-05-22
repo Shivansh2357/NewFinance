@@ -1,32 +1,30 @@
-// src/api/axios.js
 import axios from "axios";
 
+// Hardcoded URLs for local and production
+const LOCAL_BASE_URL = "http://localhost:8000/api";
+const PROD_BASE_URL = "https://newfinance.onrender.com/api";
+
+// Simple runtime check on window.location.hostname to pick URL
+const BASE_URL = window.location.hostname === "localhost" ? LOCAL_BASE_URL : PROD_BASE_URL;
+
 const instance = axios.create({
-  baseURL: "http://localhost:8000/api", // 👈 backend base URL
-  withCredentials: true, // if you plan to handle cookies/sessions
+  baseURL: BASE_URL,
+  withCredentials: true,
 });
 
-// Adding a response interceptor to handle errors globally
 instance.interceptors.response.use(
-  (response) => response, // If the response is successful, just return it
+  (response) => response,
   (error) => {
-    // Handle global errors here
     if (error.response) {
-      // The request was made, and the server responded with a status code
-      console.error('Error Response:', error.response);
+      console.error("Error Response:", error.response);
     } else if (error.request) {
-      // The request was made but no response was received
-      console.error('Error Request:', error.request);
+      console.error("Error Request:", error.request);
     } else {
-      // Something else happened
-      console.error('Error Message:', error.message);
+      console.error("Error Message:", error.message);
     }
 
-    // You can also show a global notification or redirect, depending on the error
-    // For example, redirect to login on 401 Unauthorized errors
     if (error.response && error.response.status === 401) {
-      // Redirect to login page or handle session expiration
-      console.log('Session expired, redirecting to login...');
+      console.log("Session expired, redirecting to login...");
     }
 
     return Promise.reject(error);

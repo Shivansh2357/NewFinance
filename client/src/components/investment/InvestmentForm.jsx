@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+const PRIMARY_API_URL = "https://newfinance.onrender.com/api/investments";
+const LOCAL_API_URL = "http://localhost:8000/api/investments";
+
 const InvestmentForm = ({ onAdd, onCancel }) => {
   const [formData, setFormData] = useState({
     type: "",
@@ -15,7 +18,22 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const postInvestment = async (url, data, token) => {
+    const res = await fetch(`${url}/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+
+    const resData = await res.json();
+    if (!res.ok) throw new Error(resData.message || "Failed to add investment.");
+    return resData;
   };
 
   const handleSubmit = async (e) => {
@@ -30,22 +48,16 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
         return;
       }
 
-      const res = await fetch("http://localhost:8000/api/investments/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const responseData = await res.json();
-
-      if (!res.ok)
-        throw new Error(responseData.message || "Failed to add investment.");
+      let data;
+      try {
+        data = await postInvestment(PRIMARY_API_URL, formData, token);
+      } catch (primaryError) {
+        console.warn("Primary API failed, trying local API...", primaryError);
+        data = await postInvestment(LOCAL_API_URL, formData, token);
+      }
 
       alert("Investment added successfully!");
-      onAdd(responseData);
+      onAdd(data);
 
       setFormData({
         type: "",
@@ -65,8 +77,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
     }
   };
 
-
-
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
       <h3 className="text-2xl font-semibold text-center text-[#2c3e50] mb-6">
@@ -79,11 +89,10 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           name="type"
           value={formData.type}
           onChange={handleChange}
-          placeholder="Type (stock, crypto,real_estate)"
+          placeholder="Type (stock, crypto, real_estate)"
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="text"
           name="name"
@@ -93,7 +102,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="text"
           name="symbol"
@@ -103,7 +111,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="number"
           name="amountInvested"
@@ -114,7 +121,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="number"
           name="quantity"
@@ -125,7 +131,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="number"
           name="purchasePrice"
@@ -136,7 +141,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <input
           type="date"
           name="purchaseDate"
@@ -145,7 +149,6 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
           className="p-3 border border-gray-300 rounded-md"
           required
         />
-
         <textarea
           name="description"
           value={formData.description}
@@ -164,7 +167,16 @@ const InvestmentForm = ({ onAdd, onCancel }) => {
             {loading ? "Adding..." : "Add Investment"}
           </button>
 
-          
+          {onCancel && (
+            <button
+              type="button"
+              className="auth-button bg-gray-400 hover:bg-gray-500 text-white px-6 py-3 rounded-md font-medium"
+              onClick={onCancel}
+              disabled={loading}
+            >
+              Cancel
+            </button>
+          )}
         </div>
       </form>
     </div>

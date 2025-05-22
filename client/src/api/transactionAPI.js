@@ -1,27 +1,26 @@
-// src/api/transactionAPI.js
 import axios from "axios";
 
-// Creating an axios instance with the base URL
+const LOCAL_BASE_URL = "http://localhost:8000/api/transactions";
+const PROD_BASE_URL = "https://newfinance.onrender.com/api/transactions";
+
+const BASE_URL = window.location.hostname === "localhost" ? LOCAL_BASE_URL : PROD_BASE_URL;
+
 const API = axios.create({
-  baseURL: "http://localhost:8000/api/transactions", // Backend base URL for transactions
-  withCredentials: true, // If you are handling cookies/sessions
+  baseURL: BASE_URL,
+  withCredentials: true,
 });
 
-// Adding an interceptor to include the token in the Authorization header
 API.interceptors.request.use(
   (config) => {
     const user = JSON.parse(sessionStorage.getItem("user"));
     if (user?.token) {
-      config.headers.Authorization = `Bearer ${user.token}`; // Add token to the Authorization header
+      config.headers.Authorization = `Bearer ${user.token}`;
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// API functions for transactions
 export const addTransaction = (transactionData) => API.post("/add", transactionData);
 export const getTransactions = () => API.get("/");
 export const deleteTransaction = (id) => API.delete(`/${id}`);

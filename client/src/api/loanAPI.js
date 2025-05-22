@@ -1,13 +1,18 @@
-// loanAPI.js
 import axios from "axios";
 
-// Creating an axios instance with the base URL
+// Hardcoded base URLs
+const LOCAL_BASE_URL = "http://localhost:8000/api/loans";
+const PROD_BASE_URL = "https://newfinance.onrender.com/api/loans";
+
+// Pick base URL based on hostname
+const BASE_URL =
+  window.location.hostname === "localhost" ? LOCAL_BASE_URL : PROD_BASE_URL;
+
 const API = axios.create({
-  baseURL: "http://localhost:8000/api/loans", // Backend base URL for loans
-  withCredentials: true, // Include cookies if using session-based auth
+  baseURL: BASE_URL,
+  withCredentials: true,
 });
 
-// Add interceptor to attach JWT token to Authorization header
 API.interceptors.request.use(
   (config) => {
     const user = JSON.parse(sessionStorage.getItem("user"));
@@ -19,8 +24,7 @@ API.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// API functions for loans
-export const addLoan = (loanData) => API.post("/add", loanData);               // Add a new loan
-export const getLoans = () => API.get("/");                                     // Get all loans for the logged-in user
+export const addLoan = (loanData) => API.post("/add", loanData);
+export const getLoans = () => API.get("/");
 export const updateLoan = (id, updatedData) => API.put(`/${id}`, updatedData);
-export const deleteLoan = (id) => API.delete(`/${id}`);                         // Delete a loan
+export const deleteLoan = (id) => API.delete(`/${id}`);
