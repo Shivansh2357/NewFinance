@@ -1,9 +1,8 @@
 /* Container */
 .recurring-transactions-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 3% auto;
-  height: auto;
+  width:160vh;
+  margin:3%;
+  height:82vh;
   padding: 25px;
   background-color: white;
   border-radius: 10px;
@@ -88,7 +87,7 @@
 .edit-button {
   background-color: #38A169;
   color: white;
-  padding: 12px 24px;
+  padding: 10px 18px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -104,7 +103,7 @@
 .delete-button {
   background-color: #E53E3E;
   color: white;
-  padding: 12px 24px;
+  padding: 10px 18px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -116,6 +115,7 @@
   background-color: #C53030;
 }
 
+
 /* No Transactions Text */
 .no-transactions {
   color: #718096;
@@ -123,10 +123,9 @@
   text-align: center;
   padding: 40px 0;
 }
-
-/* Form Styling */
 form {
   max-width: 700px;
+  
   margin: 0 auto;
   padding: 25px;
   background-color: #F7FAFC;
@@ -141,7 +140,7 @@ form textarea {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 18px;
-  border: 2px solid #CBD5E0;
+  border: 2px solid #CBD5E0; /* Tailwind gray-300 */
   border-radius: 10px;
   font-size: 1rem;
   color: #2D3748;
@@ -152,7 +151,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  border-color: #5B99C2;
+  border-color: #5B99C2; /* Your blue */
   outline: none;
   box-shadow: 0 0 6px rgba(91, 153, 194, 0.5);
 }
@@ -180,16 +179,14 @@ form button {
 form button:hover {
   background-color: #4a87b0;
 }
-
-/* Cancel Button */
 .cancel-button {
   display: block;
-  width: auto;
-  padding: 12px 24px;
+  width: 10%;
   background-color: #5B99C2;
   color: white;
   font-weight: 700;
   font-size: 1.1rem;
+  padding: 14px 0;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -198,11 +195,10 @@ form button:hover {
   font-family: inherit;
 }
 
+
 .cancel-button:hover {
   background-color: #4a87b0;
 }
-
-/* Pagination Controls */
 .pagination-controls {
   margin-top: 20px;
   display: flex;
@@ -228,27 +224,4 @@ form button:hover {
 .pagination-info {
   font-weight: bold;
   color: #333;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .recurring-transactions-container {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .transaction-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .cancel-button {
-    width: 100%;
-  }
-
-  .add-transaction-button,
-  .edit-button,
-  .delete-button {
-    width: 100%;
-  }
 }
