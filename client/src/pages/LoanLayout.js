@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import LoanList from "../components/investment/loan/LoanList"
-import AddLoanForm from "../components/investment/loan/AddLoanForm"
+//import AddLoanForm from "../components/investment/loan/AddLoanForm"
 
 const LoanLayout = () => {
   return (

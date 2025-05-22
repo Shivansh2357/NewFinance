@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useAuth } from "../context/AuthContext"; // Import the useAuth hook to access the token
+//import { useAuth } from "../context/AuthContext"; // Import the useAuth hook to access the token
 
 // Create an axios instance
 const API = axios.create({
