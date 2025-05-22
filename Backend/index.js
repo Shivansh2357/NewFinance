@@ -8,25 +8,24 @@ import savingsRoutes from "./routes/savingsRoutes.js";
 import recurringTransactionRoutes from "./routes/recurringTransactionRoutes.js";
 import investmentRoutes from "./routes/investmentRoutes.js";
 import loanRoutes from "./routes/loanRoutes.js";
-import taxRoutes from "./routes/taxRoutes.js"
-import morgan from 'morgan';
-
-
+import taxRoutes from "./routes/taxRoutes.js";
+import morgan from "morgan";
 
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 // Middleware
 app.use(express.json());
 
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true
-}));
-
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 // Routes
 app.use("/api/users", userRoutes);
@@ -35,7 +34,12 @@ app.use("/api/savings", savingsRoutes);
 app.use("/api/recurring-transactions", recurringTransactionRoutes);
 app.use("/api/investments", investmentRoutes);
 app.use("/api/loans", loanRoutes);
-app.use("/api/tax",taxRoutes)
+app.use("/api/tax", taxRoutes);
+
+// ✅ Add this route to handle GET /
+app.get("/", (req, res) => {
+  res.send("✅ Finance API is live and connected to MongoDB!");
+});
 
 const PORT = process.env.PORT || 8001;
 
