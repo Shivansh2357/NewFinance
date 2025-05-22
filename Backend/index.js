@@ -20,12 +20,27 @@ app.use(morgan("dev"));
 // Middleware
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://new-finance-one.vercel.app"
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: function (origin, callback) {
+      // allow requests with no origin (like Postman or curl)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = `CORS policy does not allow access from origin: ${origin}`;
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
     credentials: true,
   })
 );
+
 
 // Routes
 app.use("/api/users", userRoutes);
